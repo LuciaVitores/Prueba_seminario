@@ -1,2 +1,2 @@
-# Prueba_seminario
+# Seminario
 Prueba para los seminarios de WEBSEM

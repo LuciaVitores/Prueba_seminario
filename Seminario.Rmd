@@ -1,7 +1,7 @@
 ---
-title: "Natalidad-PIB"
+title: "Natalidad en función del PIB por comunidad autónoma."
 author: "Lucía Vítores e Irene Gamazo"
-date: "20/10/2021"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
@@ -30,7 +30,4 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-```{r}
-PIB <- read_delim("", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
-```
+

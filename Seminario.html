@@ -166,7 +166,7 @@ pre code {
 
 <h1 class="title toc-ignore">Natalidad en función del PIB por comunidad autónoma.</h1>
 <h4 class="author">Lucía Vítores e Irene Gamazo</h4>
-<h4 class="date">03 noviembre, 2021</h4>
+<h4 class="date">04 noviembre, 2021</h4>
 
 </div>
 
@@ -179,7 +179,21 @@ X2016_2 &lt;- read_excel(&quot;INPUT/Nacimiento - PIB/2016.2.xls&quot;)
 View(X2016_2)</code></pre>
 <pre class="r"><code>library(readxl)
 X2017_2 &lt;- read_excel(&quot;INPUT/Nacimiento - PIB/2017.2.xls&quot;)
-View(X2017_2)</code></pre>
+X2017_2</code></pre>
+<pre><code>## # A tibble: 228 x 4
+##    `Comunidades autónomas` `Tipo de dato` Periodo Total
+##    &lt;chr&gt;                   &lt;chr&gt;          &lt;chr&gt;   &lt;dbl&gt;
+##  1 01 Andalucía            Dato base      2017M12  6256
+##  2 01 Andalucía            Dato base      2017M11  6528
+##  3 01 Andalucía            Dato base      2017M10  6816
+##  4 01 Andalucía            Dato base      2017M09  6460
+##  5 01 Andalucía            Dato base      2017M08  6379
+##  6 01 Andalucía            Dato base      2017M07  6416
+##  7 01 Andalucía            Dato base      2017M06  5848
+##  8 01 Andalucía            Dato base      2017M05  5980
+##  9 01 Andalucía            Dato base      2017M04  5786
+## 10 01 Andalucía            Dato base      2017M03  6336
+## # ... with 218 more rows</code></pre>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
 <pre class="r"><code>summary(cars)</code></pre>

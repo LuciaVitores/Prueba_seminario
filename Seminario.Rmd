@@ -21,7 +21,7 @@ View(X2016_2)
 ```{r}
 library(readxl)
 X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")
-View(X2017_2)
+X2017_2
 ```
 
 

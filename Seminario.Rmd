@@ -13,9 +13,16 @@ knitr::opts_chunk$set(echo = TRUE)
 Este repositorio ha sido creado para almacenar la información correspondiente con los valores de la natalidad en España por comunidades autónomas relacionadas con los índices del PIB.
 
 ```{r}
-library(readxl)
+#install.packages('DT')
+library(DT)
+crosstalk::is.SharedData(data)
+```
+
+
+```{r}
+library(DT)
 X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
-View(X2016_2)
+datatable(X2016_2)
 ```
 
 ```{r}

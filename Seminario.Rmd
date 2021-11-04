@@ -20,15 +20,14 @@ crosstalk::is.SharedData(data)
 
 
 ```{r}
-library(DT)
-X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
+X2016_2 <-("INPUT/Nacimiento - PIB/2016.2.xls")
 datatable(X2016_2)
 ```
 
 ```{r}
-library(readxl)
+library(DT)
 X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")
-X2017_2
+datatable(X2017_2)
 ```
 
 

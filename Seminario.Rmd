@@ -15,19 +15,17 @@ Este repositorio ha sido creado para almacenar la información correspondiente c
 ```{r}
 #install.packages('DT')
 library(DT)
+library(tidyverse)
 crosstalk::is.SharedData(data)
 ```
 
 
 ```{r}
-X2016_2 <-("INPUT/Nacimiento - PIB/2016.2.xls")
-datatable(X2016_2)
+read.table(file = "INPUT/Nacimiento - PIB/2016.2.xls")
 ```
 
 ```{r}
-library(DT)
-X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")
-datatable(X2017_2)
+read.table(file = "INPUT/Nacimiento - PIB/2017.2.xls", header = TRUE)
 ```
 
 

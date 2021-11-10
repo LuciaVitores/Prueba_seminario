@@ -12,21 +12,27 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Natalidad Y PIB
 Este repositorio ha sido creado para almacenar la información correspondiente con los valores de la natalidad en España por comunidades autónomas relacionadas con los índices del PIB.
 
-```{r}
+```{r ,warning=FALSE,message=FALSE}
 #install.packages('DT')
 library(DT)
 library(tidyverse)
-crosstalk::is.SharedData(data)
+# crosstalk::is.SharedData(data)
 ```
 
 
 ```{r}
-read.table(file = "INPUT/Nacimiento - PIB/2016.2.xls")
+library(readxl)
+X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
 ```
 
+
+
+
 ```{r}
-read.table(file = "INPUT/Nacimiento - PIB/2017.2.xls", header = TRUE)
+X2016_2
 ```
+
+
 
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.

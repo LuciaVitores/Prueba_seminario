@@ -9,17 +9,21 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Natalidad Y PIB
+### __Natalidad y PIB.__
 Este repositorio ha sido creado para almacenar la información correspondiente con los valores de la natalidad en España por comunidades autónomas relacionadas con los índices del PIB.
+
+La información usada para realizar este trabajo ha sido obtenida en [Instituto Nacional de Estadística](https://www.ine.es/).
+
+### __Inserción de tablas.__
+Insertaremos las tablas con los datos obtenidos sobre la natalidad en las comunidades autónomas españolas entre los años 2016 y 2020, así como los valores del PIB correspondientes a estos años. 
 
 ```{r ,warning=FALSE,message=FALSE}
 #install.packages('DT')
 library(DT)
 library(tidyverse)
-# crosstalk::is.SharedData(data)
 ```
 
-
+_Tabla sobre el nacimiento en el año 2016._
 ```{r}
 library(readxl)
 X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
@@ -29,6 +33,8 @@ X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
 X2016_2
 ```
 
+
+_Tabla sobre el nacimiento en el año 2017._
 ```{r}
 library(readxl)
 X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")

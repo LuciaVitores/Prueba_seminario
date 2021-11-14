@@ -56,6 +56,15 @@ X2019_2 <- read_excel("INPUT/Nacimiento - PIB/2019.2.xls")
 X2019_2
 ```
 
+```{r}
+library(readxl)
+X2020_2 <- read_excel("INPUT/Nacimiento - PIB/2020.2.xls")
+```
+
+```{r}
+X2020_2
+```
+
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 

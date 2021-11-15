@@ -33,7 +33,6 @@ X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
 X2016_2
 ```
 
-
 _Tabla sobre el nacimiento en el año 2017._
 ```{r}
 library(readxl)
@@ -44,6 +43,7 @@ X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")
 X2017_2
 ```
 
+_Tabla sobre el nacimiento en el año 2018._
 ```{r}
 library(readxl)
 X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")
@@ -53,6 +53,7 @@ X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")
 X2018_2
 ```
 
+_Tabla sobre el nacimiento en el año 2019._
 ```{r}
 library(readxl)
 X2019_2 <- read_excel("INPUT/Nacimiento - PIB/2019.2.xls")
@@ -62,6 +63,7 @@ X2019_2 <- read_excel("INPUT/Nacimiento - PIB/2019.2.xls")
 X2019_2
 ```
 
+_Tabla sobre el nacimiento en el año 2020._
 ```{r}
 library(readxl)
 X2020_2 <- read_excel("INPUT/Nacimiento - PIB/2020.2.xls")
@@ -71,6 +73,7 @@ X2020_2 <- read_excel("INPUT/Nacimiento - PIB/2020.2.xls")
 X2020_2
 ```
 
+_Tabla sobre el PIB._
 ```{r}
 library(readxl)
 PIB2 <- read_excel("INPUT/Nacimiento - PIB/PIB2.xls")

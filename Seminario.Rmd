@@ -9,10 +9,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### __Natalidad y PIB.__
 Este repositorio ha sido creado para almacenar la información correspondiente con los valores de la natalidad por comunidades autónomas relacionadas con los índices del producto interior burto (PIB) en España. 
 
 La información usada para realizar este trabajo ha sido obtenida en [Instituto Nacional de Estadística](https://www.ine.es/).
+
+### __Natalidad y PIB.__
+Al contrario de lo que se podría esperar, cuanta mayor riqueza tiene zona y por tanto, su PIB es mayor, la tasa de natalidad es notablemente inferior comparada con otras zonas con un PIB más bajo.
 
 
 ### __Objetivos.__
@@ -32,6 +34,7 @@ Primeros indicamos los paquetes de R que vamos a usar.
 library(readxl)
 library(DT)
 library(tidyverse)
+library(ggplot2)
 ```
 
 _Tabla sobre el nacimiento en el año 2016._
@@ -41,6 +44,12 @@ X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
 
 ```{r}
 DT::datatable(X2016_2)
+```
+
+```{r , message=FALSE} 
+data("X2016_2")
+str(X2016_2)
+ggplot(data = X2016_2, aes(x = x, y = y))
 ```
 
 _Tabla sobre el nacimiento en el año 2017._

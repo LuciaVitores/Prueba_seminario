@@ -1,6 +1,6 @@
+![image](https://user-images.githubusercontent.com/80346455/142169799-eea4b643-6780-4378-9dc5-389676c05108.png)
 # Natalidad en función del PIB por comunidad autónoma. 
 Este repositorio ha sido creado por las integrantes del grupo E (Irene Gamazo y Lucía Vítores) de Fuentes de Datos Biomédicos y Webs Semánticas de 3º de Ingeniería de la Salud.
-![image](https://user-images.githubusercontent.com/80346455/142169799-eea4b643-6780-4378-9dc5-389676c05108.png)
 
 ## Objetivos. 
 Los principales objetivos a estudiar en este repositorio son:

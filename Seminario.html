@@ -166,7 +166,7 @@ pre code {
 
 <h1 class="title toc-ignore">Natalidad en función del PIB por comunidad autónoma.</h1>
 <h4 class="author">Lucía Vítores e Irene Gamazo</h4>
-<h4 class="date">10 noviembre, 2021</h4>
+<h4 class="date">14 noviembre, 2021</h4>
 
 </div>
 
@@ -212,6 +212,74 @@ X2017_2 &lt;- read_excel(&quot;INPUT/Nacimiento - PIB/2017.2.xls&quot;)</code></
 ##  9 01 Andalucía            Dato base      2017M04  5786
 ## 10 01 Andalucía            Dato base      2017M03  6336
 ## # ... with 218 more rows</code></pre>
+<pre class="r"><code>library(readxl)
+X2018_2 &lt;- read_excel(&quot;INPUT/Nacimiento - PIB/2018.2.xls&quot;)</code></pre>
+<pre class="r"><code>X2018_2</code></pre>
+<pre><code>## # A tibble: 228 x 4
+##    `Comunidades autónomas` `Tipo de dato` Periodo Total
+##    &lt;chr&gt;                   &lt;chr&gt;          &lt;chr&gt;   &lt;dbl&gt;
+##  1 01 Andalucía            Dato base      2018M12  5939
+##  2 01 Andalucía            Dato base      2018M11  6105
+##  3 01 Andalucía            Dato base      2018M10  6301
+##  4 01 Andalucía            Dato base      2018M09  6039
+##  5 01 Andalucía            Dato base      2018M08  6313
+##  6 01 Andalucía            Dato base      2018M07  6116
+##  7 01 Andalucía            Dato base      2018M06  5649
+##  8 01 Andalucía            Dato base      2018M05  5776
+##  9 01 Andalucía            Dato base      2018M04  5571
+## 10 01 Andalucía            Dato base      2018M03  5722
+## # ... with 218 more rows</code></pre>
+<pre class="r"><code>library(readxl)
+X2019_2 &lt;- read_excel(&quot;INPUT/Nacimiento - PIB/2019.2.xls&quot;)</code></pre>
+<pre class="r"><code>X2019_2</code></pre>
+<pre><code>## # A tibble: 228 x 4
+##    `Comunidades autónomas` `Tipo de dato` Periodo Total
+##    &lt;chr&gt;                   &lt;chr&gt;          &lt;chr&gt;   &lt;dbl&gt;
+##  1 01 Andalucía            Dato base      2019M12  5750
+##  2 01 Andalucía            Dato base      2019M11  5769
+##  3 01 Andalucía            Dato base      2019M10  6357
+##  4 01 Andalucía            Dato base      2019M09  5983
+##  5 01 Andalucía            Dato base      2019M08  6154
+##  6 01 Andalucía            Dato base      2019M07  5719
+##  7 01 Andalucía            Dato base      2019M06  5176
+##  8 01 Andalucía            Dato base      2019M05  5703
+##  9 01 Andalucía            Dato base      2019M04  5663
+## 10 01 Andalucía            Dato base      2019M03  5780
+## # ... with 218 more rows</code></pre>
+<pre class="r"><code>library(readxl)
+X2020_2 &lt;- read_excel(&quot;INPUT/Nacimiento - PIB/2020.2.xls&quot;)</code></pre>
+<pre class="r"><code>X2020_2</code></pre>
+<pre><code>## # A tibble: 228 x 4
+##    `Comunidades autónomas` `Tipo de dato` Periodo Total
+##    &lt;chr&gt;                   &lt;chr&gt;          &lt;chr&gt;   &lt;dbl&gt;
+##  1 01 Andalucía            Dato base      2020M12  4528
+##  2 01 Andalucía            Dato base      2020M11  5152
+##  3 01 Andalucía            Dato base      2020M10  5816
+##  4 01 Andalucía            Dato base      2020M09  5688
+##  5 01 Andalucía            Dato base      2020M08  5565
+##  6 01 Andalucía            Dato base      2020M07  5699
+##  7 01 Andalucía            Dato base      2020M06  5437
+##  8 01 Andalucía            Dato base      2020M05  5388
+##  9 01 Andalucía            Dato base      2020M04  5288
+## 10 01 Andalucía            Dato base      2020M03  5585
+## # ... with 218 more rows</code></pre>
+<pre class="r"><code>library(readxl)
+PIB2 &lt;- read_excel(&quot;INPUT/Nacimiento - PIB/PIB2.xls&quot;)</code></pre>
+<pre class="r"><code>PIB2</code></pre>
+<pre><code>## # A tibble: 100 x 4
+##    `Comunidades y ciudades autónomas` `Ramas de actividad`       periodo   Total
+##    &lt;chr&gt;                              &lt;chr&gt;                      &lt;chr&gt;     &lt;dbl&gt;
+##  1 Andalucía                          PRODUCTO INTERIOR BRUTO A~ 2019     1.66e8
+##  2 Andalucía                          PRODUCTO INTERIOR BRUTO A~ 2018 (~  1.61e8
+##  3 Andalucía                          PRODUCTO INTERIOR BRUTO A~ 2017     1.55e8
+##  4 Andalucía                          PRODUCTO INTERIOR BRUTO A~ 2016     1.48e8
+##  5 Andalucía                          PRODUCTO INTERIOR BRUTO A~ 2015     1.45e8
+##  6 Aragón                             PRODUCTO INTERIOR BRUTO A~ 2019 (~  3.80e7
+##  7 Aragón                             PRODUCTO INTERIOR BRUTO A~ 2018 (~  3.69e7
+##  8 Aragón                             PRODUCTO INTERIOR BRUTO A~ 2017     3.56e7
+##  9 Aragón                             PRODUCTO INTERIOR BRUTO A~ 2016     3.42e7
+## 10 Aragón                             PRODUCTO INTERIOR BRUTO A~ 2015     3.29e7
+## # ... with 90 more rows</code></pre>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
 <pre class="r"><code>summary(cars)</code></pre>

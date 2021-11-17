@@ -2,6 +2,8 @@
 # Natalidad en función del PIB por comunidad autónoma. 
 Este repositorio ha sido creado por las integrantes del grupo E (Irene Gamazo y Lucía Vítores) de la asignatura de Fuentes de Datos Biomédicos y Webs Semánticas de 3º de Ingeniería de la Salud (UBU).
 
+Su función es permitir el estudio de la natalidad en las distintas comunidades autónomas junto con el PIB en un rango de 5 años en España. 
+
 ## Objetivos. 
 Los principales objetivos a estudiar en este repositorio son:
 
@@ -10,5 +12,5 @@ Los principales objetivos a estudiar en este repositorio son:
 + Comparar el crecimiento económico de las 19 comunidades de España.
 
 ### __Inserción de tablas.__
-Insertaremos las tablas con los datos obtenidos sobre la natalidad en las comunidades autónomas españolas entre los años 2016 y 2020, así como los valores del PIB correspondientes a estos años. 
+Insertaremos las tablas con los datos obtenidos sobre la natalidad en las comunidades autónomas españolas entre los años 2016 y 2020, así como los valores del PIB correspondientes a estos años. Así como los gráficos correspondientes a cada tabla. 
 

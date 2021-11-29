@@ -40,7 +40,7 @@ library(ggplot2)
 _Tabla sobre el nacimiento en el año 2016._
 ```{r}
 X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")%>%
-  mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`),levels = c("01 Andalucía", "02 Aragón", "03 Asturias, Principado de", "04 Balears, Illes","05 Canarias", "06 Cantabria", "07 Castilla y León", "08 Castilla - La Mancha", "09 Cataluña", "10 Comunitat Valenciana","11 Extremadura", "12 Galicia", "13 Madrid, Comunidad de", "14 Murcia, Región de", "15 Navarra, Comunidad Foral de", "16 País Vasco", "17 Rioja, La", "18 Ceuta", "19 Melilla"),              labels = c("Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla y León", "Castilla la Mancha", "Cataluña","Valencia", "Extremadura", "Galicia", "Madrid", "Murcia", "Navarra","Pais Vasco", "La Rioja", "Ceuta","Melilla"  ))
+  mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`),levels = c("01 Andalucía", "02 Aragón", "03 Asturias, Principado de", "04 Balears, Illes","05 Canarias", "06 Cantabria", "07 Castilla y León", "08 Castilla - La Mancha", "09 Cataluña", "10 Comunitat Valenciana","11 Extremadura", "12 Galicia", "13 Madrid, Comunidad de", "14 Murcia, Región de", "15 Navarra, Comunidad Foral de", "16 País Vasco", "17 Rioja, La", "18 Ceuta", "19 Melilla"),labels = c("Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla y León", "Castilla la Mancha", "Cataluña","Valencia", "Extremadura", "Galicia", "Madrid", "Murcia", "Navarra","Pais Vasco", "La Rioja", "Ceuta","Melilla"))
  
 #X2016_2 
   #levels(X2016_2$`Comunidades autónomas`)
@@ -49,12 +49,15 @@ X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")%>%
 ```
 
 ```{r}
+X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
 DT::datatable(X2016_2)
 ```
 
 ```{r , message=FALSE} 
 data("X2016_2")
-ggplot(data = X2016_2, aes(x = `Comunidades autónomas` , y = Total))
+ggplot(data = X2016_2, aes(x = `Comunidades autónomas` , y = Total)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point()
   
 ```
 

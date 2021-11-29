@@ -9,7 +9,7 @@ Los principales objetivos a estudiar en este repositorio son:
 
 + Estudiar los niveles de Natalidad desde 2016 hasta 2020 en cada comunidad autónoma española.
 + Conocer el valor del PIB correspondiente a cada comunidad autónoma española.
-+ Comparar el crecimiento económico de las 19 comunidades de España.
++ Comparar el crecimiento económico de las 19 comunidades autónomas de España.
 + Relacionar estos niveles de natalidad en nuestro periodo con los valores del PIB por comunidad autónoma.
 
 

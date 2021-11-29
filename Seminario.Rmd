@@ -20,9 +20,10 @@ Al contrario de lo que se podría esperar, cuanta mayor riqueza tiene zona y por
 ### __Objetivos.__
 Los principales objetivos a estudiar en este repositorio son:
 
-+ Relación existente entre los nacimientos y el PIB en España. 
-+ Media de los nacimientos que se producen en las comunidades españolas en un rango de 5 años (2016-2020).
-+ Comparar el crecimiento económico de las 19 comunidades de España.
++ Estudiar los niveles de Ntalidad desde 2016 hasta 2020 en cada comunidad autónoma española. 
++ Conocer el valor dle PIB correspondiente a cada comunidad autónoma española.
++ Comparar el crecimiento económico de las 19 cominidades autónomas españolas.
++ Relacioar estos niveles de natalidad en nuestro periodo de tiempo estudiado con los valores del PIB por comunidad autónoma.
 
 ### __Inserción de tablas.__
 Insertaremos las tablas con los datos obtenidos sobre la natalidad en las comunidades autónomas españolas entre los años 2016 y 2020, así como los valores del PIB correspondientes a estos años. 

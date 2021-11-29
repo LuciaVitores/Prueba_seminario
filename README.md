@@ -7,9 +7,11 @@ Su función es permitir el estudio de la natalidad en las distintas comunidades 
 ## Objetivos. 
 Los principales objetivos a estudiar en este repositorio son:
 
-+ Relación existente entre los nacimientos y el PIB en España. 
-+ Media de los nacimientos que se producen en las comunidades españolas en un rango de 5 años (2016-2020).
++ Estudiar los niveles de Natalidad desde 2016 hasta 2020 en cada comunidad autónoma española.
++ Conocer el valor del PIB correspondiente a cada comunidad autónoma española.
 + Comparar el crecimiento económico de las 19 comunidades de España.
++ Relacionar estos niveles de natalidad en nuestro periodo con los valores del PIB por comunidad autónoma.
+
 
 
 

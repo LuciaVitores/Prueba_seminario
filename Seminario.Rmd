@@ -20,7 +20,7 @@ Al contrario de lo que se podría esperar, cuanta mayor riqueza tiene zona y por
 ### __Objetivos.__
 Los principales objetivos a estudiar en este repositorio son:
 
-+ Estudiar los niveles de Ntalidad desde 2016 hasta 2020 en cada comunidad autónoma española. 
++ Estudiar los niveles de Natalidad desde 2016 hasta 2020 en cada comunidad autónoma española. 
 + Conocer el valor del PIB correspondiente a cada comunidad autónoma española.
 + Comparar el crecimiento económico de las 19 cominidades autónomas españolas.
 + Relacionar estos niveles de natalidad en nuestro periodo de tiempo estudiado con los valores del PIB por comunidad autónoma.

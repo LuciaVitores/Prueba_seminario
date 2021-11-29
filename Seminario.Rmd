@@ -45,7 +45,6 @@ X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")%>%
 #X2016_2 
   #levels(X2016_2$`Comunidades autónomas`)
    
-  
 ```
 
 ```{r}
@@ -70,6 +69,14 @@ X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")
 DT::datatable(X2017_2)
 ```
 
+```{r , message=FALSE} 
+data("X2017_2")
+ggplot(data = X2017_2, aes(x = `Comunidades autónomas` , y = Total)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point()
+  
+```
+
 _Tabla sobre el nacimiento en el año 2018._
 ```{r}
 X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")
@@ -77,6 +84,14 @@ X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")
 
 ```{r}
 DT::datatable(X2018_2)
+```
+
+```{r , message=FALSE} 
+data("X2018_2")
+ggplot(data = X2018_2, aes(x = `Comunidades autónomas` , y = Total)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point()
+  
 ```
 
 _Tabla sobre el nacimiento en el año 2019._
@@ -88,6 +103,14 @@ X2019_2 <- read_excel("INPUT/Nacimiento - PIB/2019.2.xls")
 DT::datatable(X2019_2)
 ```
 
+```{r , message=FALSE} 
+data("X2019_2")
+ggplot(data = X2019_2, aes(x = `Comunidades autónomas` , y = Total)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point()
+  
+```
+
 _Tabla sobre el nacimiento en el año 2020._
 ```{r}
 X2020_2 <- read_excel("INPUT/Nacimiento - PIB/2020.2.xls")
@@ -95,6 +118,14 @@ X2020_2 <- read_excel("INPUT/Nacimiento - PIB/2020.2.xls")
 
 ```{r}
 DT::datatable(X2020_2)
+```
+
+```{r , message=FALSE} 
+data("X2020_2")
+ggplot(data = X2020_2, aes(x = `Comunidades autónomas` , y = Total)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point()
+  
 ```
 
 _Tabla sobre el PIB._
@@ -106,14 +137,27 @@ PIB2 <- read_excel("INPUT/Nacimiento - PIB/PIB2.xls")
 DT::datatable(PIB2)
 ```
 
+```{r , message=FALSE} 
+data("PIB2")
+ggplot(data = PIB2, aes(x = `Comunidades y ciudades autónomas` , y = Total)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point()
+  
+```
 
 ```{r , message=FALSE} 
 data("PIB2")
-pivot_wider(data = PIB2, names_from = "Variables", values_from = "Valores")
+pivot_wider(data = PIB2, names_from = "variables", values_from = "valores")
 ggplot(data = PIB2, aes(x = 'Comunidades y ciudades autónomas')) +
   geom_bar()
-pivot_wider(data = PIB2, names_from = "Variables", values_from = "Valores")
+pivot_wider(data = PIB2, names_from = "variables", values_from = "valores")
+rlang::last_error()
+
 ```
+
+
+
+
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:

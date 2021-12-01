@@ -139,11 +139,23 @@ DT::datatable(PIB2)
 
 ```{r , message=FALSE} 
 data("PIB2")
-ggplot(data = PIB2, aes(x = `Comunidades y ciudades autónomas` , y = Total)) +
+ggplot(data = PIB2, aes(x = `Comunidades y ciudades autónomas`,)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_point()
+  geom_bar()
   
 ```
+
+```{r}
+data("PIB2")
+ggplot(data = PIB2)+
+  geom_bar(
+    mapping = aes(x = `Comunidades y ciudades autónomas`, fill = Total ),
+    width = 1
+  )+
+  theme(aspect.ratio = 1)+
+  labs(x= NULL, y = NULL)
+```
+
 
 ```{r , message=FALSE} 
 #data("PIB2")

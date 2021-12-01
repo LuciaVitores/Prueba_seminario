@@ -20,8 +20,7 @@ Al contrario de lo que se podría esperar, cuanta mayor riqueza tiene zona y por
 ### __Objetivos.__
 Los principales objetivos a estudiar en este repositorio son:
 
-+ Estudiar los niveles de Natalidad desde 2016 hasta 2020 en cada comunidad autónoma española. 
-+ Conocer el valor del PIB correspondiente a cada comunidad autónoma española.
++ Estudiar graficamente los niveles de natalidad desde 2016 hasta 2020 en cada comunidad autónoma española. + Conocer el valor del PIB correspondiente a cada comunidad autónoma española.
 + Comparar el crecimiento económico de las 19 cominidades autónomas españolas.
 + Relacionar estos niveles de natalidad en nuestro periodo de tiempo estudiado con los valores del PIB por comunidad autónoma.
 
@@ -38,20 +37,18 @@ library(tidyverse)
 library(ggplot2)
 ```
 
+
+
 _Tabla sobre el nacimiento en el año 2016._
 ```{r}
-#X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")%>%
- # mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`),levels = c("01 Andalucía", "02 Aragón", #"03 Asturias, Principado de", "04 Balears, Illes","05 Canarias", "06 Cantabria", "07 Castilla y León", "08 #Castilla - La Mancha", "09 Cataluña", "10 Comunitat Valenciana","11 Extremadura", "12 Galicia", "13 #Madrid, Comunidad de", "14 Murcia, Región de", "15 Navarra, Comunidad Foral de", "16 País Vasco", "17 #Rioja, La", "18 Ceuta", "19 Melilla"),labels = c("Andalucía", "Aragón", "Asturias", "Baleares", #"Canarias", "Cantabria", "Castilla y León", "Castilla la Mancha", "Cataluña","Valencia", "Extremadura", #"Galicia", "Madrid", "Murcia", "Navarra","Pais Vasco", "La Rioja", "Ceuta","Melilla"))
- 
-#X2016_2 
-  #levels(X2016_2$`Comunidades autónomas`)
-   
-```
-
-```{r}
-X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls")
+X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls") %>% 
+mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
+levels = c("01 Andalucía", "02 Aragón", "03 Asturias, Principado de", "04 Balears, Illes","05 Canarias", "06 Cantabria", "07 Castilla y León", "08 Castilla - La Mancha", "09 Cataluña", "10 Comunitat Valenciana","11 Extremadura", "12 Galicia", "13 Madrid, Comunidad de", "14 Murcia, Región de", "15 Navarra, Comunidad Foral de", "16 País Vasco", "17 Rioja, La", "18 Ceuta", "19 Melilla"),
+labels = c("Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla y León", "Castilla la Mancha", "Cataluña","Valencia", "Extremadura", "Galicia", "Madrid", "Murcia", "Navarra","Pais Vasco", "La Rioja", "Ceuta","Melilla")))
 DT::datatable(X2016_2)
 ```
+
+
 
 ```{r , message=FALSE} 
 data("X2016_2")
@@ -63,12 +60,13 @@ ggplot(data = X2016_2, aes(x = `Comunidades autónomas` , y = Total)) +
 
 _Tabla sobre el nacimiento en el año 2017._
 ```{r}
-X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")
-```
-
-```{r}
+X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")%>% 
+mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
+levels = c("01 Andalucía", "02 Aragón", "03 Asturias, Principado de", "04 Balears, Illes","05 Canarias", "06 Cantabria", "07 Castilla y León", "08 Castilla - La Mancha", "09 Cataluña", "10 Comunitat Valenciana","11 Extremadura", "12 Galicia", "13 Madrid, Comunidad de", "14 Murcia, Región de", "15 Navarra, Comunidad Foral de", "16 País Vasco", "17 Rioja, La", "18 Ceuta", "19 Melilla"),
+labels = c("Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla y León", "Castilla la Mancha", "Cataluña","Valencia", "Extremadura", "Galicia", "Madrid", "Murcia", "Navarra","Pais Vasco", "La Rioja", "Ceuta","Melilla")))
 DT::datatable(X2017_2)
 ```
+
 
 ```{r , message=FALSE} 
 data("X2017_2")
@@ -80,12 +78,13 @@ ggplot(data = X2017_2, aes(x = `Comunidades autónomas` , y = Total)) +
 
 _Tabla sobre el nacimiento en el año 2018._
 ```{r}
-X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")
-```
-
-```{r}
+X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")%>% 
+mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
+levels = c("01 Andalucía", "02 Aragón", "03 Asturias, Principado de", "04 Balears, Illes","05 Canarias", "06 Cantabria", "07 Castilla y León", "08 Castilla - La Mancha", "09 Cataluña", "10 Comunitat Valenciana","11 Extremadura", "12 Galicia", "13 Madrid, Comunidad de", "14 Murcia, Región de", "15 Navarra, Comunidad Foral de", "16 País Vasco", "17 Rioja, La", "18 Ceuta", "19 Melilla"),
+labels = c("Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla y León", "Castilla la Mancha", "Cataluña","Valencia", "Extremadura", "Galicia", "Madrid", "Murcia", "Navarra","Pais Vasco", "La Rioja", "Ceuta","Melilla")))
 DT::datatable(X2018_2)
 ```
+
 
 ```{r , message=FALSE} 
 data("X2018_2")
@@ -97,12 +96,13 @@ ggplot(data = X2018_2, aes(x = `Comunidades autónomas` , y = Total)) +
 
 _Tabla sobre el nacimiento en el año 2019._
 ```{r}
-X2019_2 <- read_excel("INPUT/Nacimiento - PIB/2019.2.xls")
-```
-
-```{r}
+X2019_2 <- read_excel("INPUT/Nacimiento - PIB/2019.2.xls")%>% 
+mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
+levels = c("01 Andalucía", "02 Aragón", "03 Asturias, Principado de", "04 Balears, Illes","05 Canarias", "06 Cantabria", "07 Castilla y León", "08 Castilla - La Mancha", "09 Cataluña", "10 Comunitat Valenciana","11 Extremadura", "12 Galicia", "13 Madrid, Comunidad de", "14 Murcia, Región de", "15 Navarra, Comunidad Foral de", "16 País Vasco", "17 Rioja, La", "18 Ceuta", "19 Melilla"),
+labels = c("Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla y León", "Castilla la Mancha", "Cataluña","Valencia", "Extremadura", "Galicia", "Madrid", "Murcia", "Navarra","Pais Vasco", "La Rioja", "Ceuta","Melilla")))
 DT::datatable(X2019_2)
 ```
+
 
 ```{r , message=FALSE} 
 data("X2019_2")
@@ -114,12 +114,13 @@ ggplot(data = X2019_2, aes(x = `Comunidades autónomas` , y = Total)) +
 
 _Tabla sobre el nacimiento en el año 2020._
 ```{r}
-X2020_2 <- read_excel("INPUT/Nacimiento - PIB/2020.2.xls")
-```
-
-```{r}
+X2020_2 <- read_excel("INPUT/Nacimiento - PIB/2020.2.xls")%>% 
+mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
+levels = c("01 Andalucía", "02 Aragón", "03 Asturias, Principado de", "04 Balears, Illes","05 Canarias", "06 Cantabria", "07 Castilla y León", "08 Castilla - La Mancha", "09 Cataluña", "10 Comunitat Valenciana","11 Extremadura", "12 Galicia", "13 Madrid, Comunidad de", "14 Murcia, Región de", "15 Navarra, Comunidad Foral de", "16 País Vasco", "17 Rioja, La", "18 Ceuta", "19 Melilla"),
+labels = c("Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla y León", "Castilla la Mancha", "Cataluña","Valencia", "Extremadura", "Galicia", "Madrid", "Murcia", "Navarra","Pais Vasco", "La Rioja", "Ceuta","Melilla")))
 DT::datatable(X2020_2)
 ```
+
 
 ```{r , message=FALSE} 
 data("X2020_2")
@@ -132,11 +133,9 @@ ggplot(data = X2020_2, aes(x = `Comunidades autónomas` , y = Total)) +
 _Tabla sobre el PIB._
 ```{r}
 PIB2 <- read_excel("INPUT/Nacimiento - PIB/PIB2.xls")
-```
-
-```{r}
 DT::datatable(PIB2)
 ```
+
 
 ```{r , message=FALSE} 
 data("PIB2")

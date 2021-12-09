@@ -9,12 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Este repositorio ha sido creado para almacenar la información correspondiente con los valores de la natalidad por comunidades autónomas relacionadas con los índices del producto interior burto (PIB) en España. 
+Este [repositorio](https://github.com/LuciaVitores/Prueba_seminario) ha sido creado para almacenar la información correspondiente a la natalidad por comunidades autónomas relacionada con los índices del producto interior burto (PIB) en España. 
 
 La información usada para realizar este trabajo ha sido obtenida en [Instituto Nacional de Estadística](https://www.ine.es/).
 
 ### __Natalidad y PIB.__
-Al contrario de lo que se podría esperar, cuanta mayor riqueza tiene zona y por tanto, mayor PIB, la tasa de natalidad es notablemente inferior comparada con otras zonas con un PIB más bajo.
+Al contrario de lo que se podría esperar, cuanta mayor riqueza tenga una zona, mayor PIB tendrá y, por tanto, menor será la tasa de natalidad comparada con otras zonas con un PIB más bajo.
+Vamos a comprobarlo con las gráficas. 
 
 
 ### __Objetivos.__
@@ -38,8 +39,8 @@ library(tidyverse)
 library(ggplot2)
 ```
 
-Los datos de las tablas descargadas tenían un número delante de cada nombre de la comunidad, de forma que hemos tenido que eliminarlo para evitar posibles errores. 
-Para ello hemos usado la función __mutate__, donde hemos relacionado los levels (nombres que venían descritos) con los labels (nombres que queríamos usar). 
+Los nombres de las filas de los datos que hemos descargado en INE, estaban compuesto por un número y el nombre de la comunidad autónoma. Para un mejor trabajo de los datos y unos resultados más claros y precisos, se han eliminado los números dejando únicamente el nombre. 
+Para ello hemos usado la función __mutate__, donde hemos relacionado los __levels__ (nombres que venían descritos) con los __labels__ (nombres que queríamos dar).
 
 _Tabla sobre el nacimiento en el año 2016._
 ```{r}
@@ -126,30 +127,31 @@ ggplot(data = X2020_2, aes(x = `Comunidades autónomas` , y = Total)) +
   
 ```
 
+En este punto hemos cumplido el primer objetivo, ya que hemos representado gráficamente los valores de natalidad entre 2016 y 2020. Los resultado generales han demostrado que la natalidad se mantiene constante a lo largo de los años, siendo mayor en Andalucía, Madrid o Cataluña y menor en Cantabria, Asturias y La Rioja. 
+
+
 _Tabla sobre el PIB._
 ```{r}
 PIB2 <- read_excel("INPUT/Nacimiento - PIB/PIB2.xls")
 DT::datatable(PIB2)
 ```
 
-```{r , message=FALSE} 
-data("PIB2")
-ggplot(data = PIB2, aes(x = `Comunidades y ciudades autónomas`)) +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_bar()
-  
-```
 
 ```{r}
 data("PIB2")
-ggplot(data = PIB2)+
+ggplot(data = PIB2) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   geom_bar(
-    mapping = aes(x = `Comunidades y ciudades autónomas`, fill = Total ),
-    width = 1
+    mapping = aes(x = `Comunidades y ciudades autónomas`, fill = `Comunidades y ciudades autónomas`),
+    width = 2
   )+
   theme(aspect.ratio = 1)+
-  labs(x= NULL, y = NULL)
+  labs(x= NULL, y = NULL) + 
+  coord_polar()
 ```
+
+El segundo objetivo, conocer el valor el PIB de cada comunidad autónoma, ya se ha demostrado. 
+Usamos la función 
 
 
 ```{r , message=FALSE} 

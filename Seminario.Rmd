@@ -15,6 +15,7 @@ La información usada para realizar este trabajo ha sido obtenida en [Instituto 
 
 ### __Natalidad y PIB.__
 Al contrario de lo que se podría esperar, cuanta mayor riqueza tenga una zona, mayor PIB tendrá y, por tanto, menor será la tasa de natalidad comparada con otras zonas con un PIB más bajo.
+
 Vamos a comprobarlo con las gráficas. 
 
 
@@ -151,16 +152,18 @@ ggplot(data = PIB2) +
 ```
 
 El segundo objetivo, conocer el valor el PIB de cada comunidad autónoma, ya se ha demostrado. 
-Usamos la función 
+Hacemos un gráfico circular para poder comparar mejor los resultados obtenidos. 
 
 
-```{r , message=FALSE} 
-#data("PIB2")
-#pivot_wider(data = PIB2, names_from = "variables", values_from = "valores")
-#ggplot(data = PIB2, aes(x = 'Comunidades y ciudades autónomas')) +
-#  geom_bar()
-#pivot_wider(data = PIB2, names_from = "variables", values_from = "valores")
-#rlang::last_error()
+```{r} 
+left_join(x = X2016_2, y = X2017_2)
+
+```
+
+
+```{r}
+left <- left_join(x = PIB2, y = X2016_2)
+left
 
 ```
 

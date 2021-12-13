@@ -145,7 +145,7 @@ ggplot(data = X2020_2, aes(x = `Comunidades autónomas` , y = Total)) +
   
 ```
 
-En 2020 continúa el descenso de la natalidad. Podemos observar que en el primer mes del año __Andalucía__ registra un valor cercano a los 4500 puntos, __Cataluña__ presenta cerca de 4000 puntos y __Madrid__ a penas supera los 3000 nacimientos.
+En 2020 continúa el descenso de la natalidad. Podemos observar que en el último mes del año __Andalucía__ registra un valor cercano a los 4500 puntos, __Cataluña__ presenta cerca de 4000 puntos y __Madrid__ a penas supera los 3000 nacimientos.
 __Ceuta__ y __Melilla__ se mantienen como las comunidades con menos natalidad y con valores similares a otros años.
 Sin embargo, también observamos que __Canarias__, __Castilla la Mancha__, __Castilla y León__ y  __Murcia__ presentan algunos valores inferiores a los 1000 nacimientos.Teniendo en cuenta que en el resto de años, estas comunidades siempre presentaban valores superiores a los 1000 nacimientos, podemos afirmar que la natalidad tiende a descender cada año.
 

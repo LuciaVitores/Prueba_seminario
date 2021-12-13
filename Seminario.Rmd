@@ -166,7 +166,7 @@ natalidad
 nuevaNatalidad <- natalidad %>%
   group_by(`Comunidades autónomas`) %>%
   summarise(nat_prom  = mean(Total))
-
+nuevaNatalidad
 ```
 
 ```{r}
@@ -179,8 +179,12 @@ En esta gráfica podemos observar la media de la natalidad de las distintas comu
 _Tabla sobre el PIB._
 ```{r}
 PIB2 <- read_excel("INPUT/Nacimiento - PIB/PIB2.xls")
+names(PIB2)[names(PIB2) == 'Comunidades y ciudades autónomas'] <- 'Comunidades autónomas'
+
 DT::datatable(PIB2)
 ```
+
+
 
 ```{r}
 data("PIB2")

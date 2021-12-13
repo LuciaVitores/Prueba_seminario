@@ -154,11 +154,21 @@ Hasta aquí cumplimos el primer objetivo ya que hemos representado gráficamente
 Aunque los valores de natalidad sean cada año un poco menores, __Andalucía__, __Cataluña__ y __Madrid__ son las comunidades con los niveles más altos y __Ceuta__ y __Melilla__ aquellas en los que se producen menos nacimientos.
 
 
+Para cumplir el objetivo 4 vamos a obtener la media de las natalidades de cada año para poder compararla con mayor facilidad con los valores del PIB que mostraremos a continuación.
+El primer paso es unir todas las tablas de natalidad en una sola y a continuación obtenemos una tabla nueva con la media de cada comunidad autónoma.
 
 ```{r}
 natalidad <- rbind(X2016_2, X2017_2, X2018_2, X2019_2, X2020_2)
 natalidad
 ```
+
+```{r}
+natalidad %>%
+  group_by(`Comunidades autónomas`) %>%
+  summarise(nat_prom  = mean(Total))
+
+```
+
 
 
 _Tabla sobre el PIB._

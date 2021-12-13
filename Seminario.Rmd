@@ -152,11 +152,12 @@ ggplot(data = PIB2) +
 ```
 
 El segundo objetivo, conocer el valor el PIB de cada comunidad autónoma, ya se ha demostrado. 
-Hacemos un gráfico circular para poder comparar mejor los resultados obtenidos. 
+Hacemos un gráfico circular para poder comparar mejor los resultados obtenidos, donde a cada comunidad/ciudad autónoma le corresponde un color determinado. 
 
 
 ```{r} 
-left_join(x = X2016_2, y = X2017_2)
+natalidad <- left_join(x = X2016_2, y = left_join(x = X2017_2, y = left_join(x = X2018_2, y = left_join(x = X2019_2, y = X2020_2))), by = c("Total"))
+
 
 ```
 

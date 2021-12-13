@@ -163,20 +163,24 @@ natalidad
 ```
 
 ```{r}
-natalidad %>%
+nuevaNatalidad <- natalidad %>%
   group_by(`Comunidades autónomas`) %>%
   summarise(nat_prom  = mean(Total))
 
 ```
 
-
+```{r}
+ggplot(data = nuevaNatalidad, aes(x = `Comunidades autónomas`, y = nat_prom)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point()
+```
+En esta gráfica podemos observar la media de la natalidad de las distintas comunidades y ciudades autónomas. Podemos ver que los resultados obtenidos en la media coinciden con los obtenidos en el resto de las tablas.Se sigue manteniendo que __Andalucía__, __Cataluña__, __Madrid__ y __Valencia__ son las que mayor natalidad tienen, mientras que las que menos son __Ceuta__ y __Melilla__. 
 
 _Tabla sobre el PIB._
 ```{r}
 PIB2 <- read_excel("INPUT/Nacimiento - PIB/PIB2.xls")
 DT::datatable(PIB2)
 ```
-
 
 ```{r}
 data("PIB2")
@@ -195,39 +199,5 @@ El segundo objetivo, conocer el valor el PIB de cada comunidad autónoma, ya se 
 Hacemos un gráfico circular para poder comparar mejor los resultados obtenidos, donde a cada comunidad/ciudad autónoma le corresponde un color determinado. 
 
 
-```{r} 
-natalidad <- left_join(x = X2016_2, y = left_join(x = X2017_2, y = left_join(x = X2018_2, y = left_join(x = X2019_2, y = X2020_2))), by = c("Total"))
-
-nuevaNatalidad <- mean(natalidad)
-
-```
-
-
-```{r}
-left <- left_join(x = PIB2, y = X2016_2)
-left
-
-```
-
-
-
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 

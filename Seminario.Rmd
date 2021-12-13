@@ -191,7 +191,7 @@ data("PIB2")
 ggplot(data = PIB2) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   geom_bar(
-    mapping = aes(x = `Comunidades y ciudades autónomas`, fill = `Comunidades y ciudades autónomas`),
+    mapping = aes(x = `Comunidades autónomas`, fill = `Comunidades autónomas`),
     width = 2
   )+
   theme(aspect.ratio = 1)+

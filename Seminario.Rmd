@@ -18,7 +18,6 @@ Al contrario de lo que se podría esperar, cuanta mayor riqueza tenga una zona, 
 
 Vamos a comprobarlo con las gráficas. 
 
-
 ### __Objetivos.__
 Los principales objetivos de este repositorio son:
 
@@ -86,8 +85,6 @@ En 2017 los resultados son similares a los que encontrábamos en 2016. __Andaluc
 __Ceuta__ y __Melilla__ siguen siendo las cominidades con menor natalidad. 
 Y el resto de comunidades se mantienen dentro de los mismos valores que podíamos observar en 2016.
 
-
-
 _Tabla sobre el nacimiento en el año 2018._
 ```{r}
 X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")%>% 
@@ -107,7 +104,6 @@ ggplot(data = X2018_2, aes(x = `Comunidades autónomas` , y = Total)) +
 
 En 2018 vemos que los valores también son parecidos a los encontrados en los dos años anteriores, pero observamos que en las cuatro comunidades que presentan mayor natalidad las puntuaciones han bajado. Por ejemplo, encontramos en __Andalucía__ puntuaciones poco superiores a los 5000 nacimientos en algunos meses.
 Los valores de __Ceuta__ y __Melilla__ siguen siendo similares al igual que en el resto de comunidades.
-
 
 _Tabla sobre el nacimiento en el año 2019._
 ```{r}
@@ -155,12 +151,13 @@ Aunque los valores de natalidad sean cada año un poco menores, __Andalucía__, 
 
 
 Para cumplir el objetivo 4 vamos a obtener la media de las natalidades de cada año para poder compararla con mayor facilidad con los valores del PIB que mostraremos a continuación.
-El primer paso es unir todas las tablas de natalidad en una sola y a continuación obtenemos una tabla nueva con la media de cada comunidad autónoma.
+El primer paso es unir todas las tablas de natalidad en una sola y a continuación obtenemos una tabla nueva con la media de cada comunidad autónoma usando la función __rbind__.
 
 ```{r}
 natalidad <- rbind(X2016_2, X2017_2, X2018_2, X2019_2, X2020_2)
 natalidad
 ```
+Una vez obtenida dicha tabla, creamos una nueva que agrupe por comunidades autónomas y cree una nueva columna dentro de esta llamada _nat_prom_ que tenga la media del total de cada comunidad. 
 
 ```{r}
 nuevaNatalidad <- natalidad %>%
@@ -183,8 +180,11 @@ names(PIB2)[names(PIB2) == 'Comunidades y ciudades autónomas'] <- 'Comunidades 
 
 DT::datatable(PIB2)
 ```
+Hemos cambiado el nombre de la columna de _Comunidades y ciudades autónomas_ por _Comunidades autónomas_ para poder tener una columna con el mismo nombre en las dos tablas que queramos unir en el join. De esta forma cumplimos con el objetivo 4. 
 
-
+```{r}
+left_join(x = nuevaNatalidad, y = PIB2)
+```
 
 ```{r}
 data("PIB2")

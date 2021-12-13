@@ -60,6 +60,11 @@ ggplot(data = X2016_2, aes(x = `Comunidades autónomas` , y = Total)) +
   
 ```
 
+En 2016,podemos observar que la comunidad con mayores cifras de natalidad es __Andalucía__ con unos valores entre los 6000 y los 7000 puntos, seguida de __Cataluña__ que presenta entre 5000 y 6000 nacimientos dependiendo del mes y __Madrid__ con valores que rondan siempre los 5000 nacimientos.La cuarta comunidad con mayor puntuación es __Valencia__ que muestra valores entre los 3000 y 4000 nacimientos.
+Por otra parte, las comunidades que menos nacimientos registran son: __Ceuta__ con valores que generalmente no pasan de los 100 nacimientos y __Melilla__ que presenta entre 100 y 150 nacimientos cada mes.
+__La Rioja__, __Cantabria__, __Asturias__, __Navarra__, __Baleares__, __Extremadura__ y __Aragón__ se encuentran dentro de unos valores parecidos que no superan los 1000 nacimientos en ningún mes de 2016.
+Por último, __Canarias__, __Castilla y León__ , __Castilla la Mancha__, __Galicia__, __Murcia__ y __País Vasco__ también presentan valores similares entre los 1000 y los 2000 nacimientos cada mes.
+
 _Tabla sobre el nacimiento en el año 2017._
 ```{r}
 X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")%>% 
@@ -77,6 +82,12 @@ ggplot(data = X2017_2, aes(x = `Comunidades autónomas` , y = Total)) +
   
 ```
 
+En 2017 los resultados son similares a los que encontrábamos en 2016. __Andalucía__, __Cataluña__, __Madrdid__ y __Valencia__ son las comunidades con más nacimientos, con la diferencia de que en Andalucía, este año hay meses en los que no se alcanzan los 6000 nacimientos.
+__Ceuta__ y __Melilla__ siguen siendo las cominidades con menor natalidad. 
+Y el resto de comunidades se mantienen dentro de los mismos valores que podíamos observar en 2016.
+
+
+
 _Tabla sobre el nacimiento en el año 2018._
 ```{r}
 X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")%>% 
@@ -93,6 +104,9 @@ ggplot(data = X2018_2, aes(x = `Comunidades autónomas` , y = Total)) +
   geom_point()
   
 ```
+En 2018 vemos que los valores también son parecidos a los encontrados en los dos años anteriores, pero observamos que en las cuatro comunidades que presentan mayor natalidad las puntuaciones han bajado. Por ejemplo, encontramos en __Andalucía__ puntuaciones poco superiores a los 5000 nacimientos en algunos meses.
+Los valores de __Ceuta__ y __Melilla__ siguen siendo similares al igual que en el resto de comunidades.
+
 
 _Tabla sobre el nacimiento en el año 2019._
 ```{r}
@@ -110,6 +124,7 @@ ggplot(data = X2019_2, aes(x = `Comunidades autónomas` , y = Total)) +
   geom_point()
   
 ```
+En 2019 podemos ver que, aunque sigan encontrándose dentro de los mismos rangos, sigue la tendencia a disminuir los valores de natalidad en todas las comunidades autónomas Españolas.
 
 _Tabla sobre el nacimiento en el año 2020._
 ```{r}
@@ -127,8 +142,13 @@ ggplot(data = X2020_2, aes(x = `Comunidades autónomas` , y = Total)) +
   geom_point()
   
 ```
+En 2020 continúa el descenso de la natalidad. Podemos observar que en el primer mes del año __Andalucía__ registra un valor cercano a los 4500 puntos, __Cataluña__ presenta cerca de 4000 puntos y __Madrid__ a penas supera los 3000 nacimientos.
+__Ceuta__ y __Melilla__ se mantienen como las comunidades con menos natalidad y con valores similares a otros años.
+Sin embargo, también observamos que __Canarias__, __Castilla la Mancha__, __Castilla y León__ y  __Murcia__ presentan algunos valores inferiores a los 1000 nacimientos.Teniendo en cuenta que en el resto de años, estas comunidades siempre presentaban valores superiores a los 1000 nacimientos, podemos afirmar que la natalidad tiende a descender cada año.
 
-En este punto hemos cumplido el primer objetivo, ya que hemos representado gráficamente los valores de natalidad entre 2016 y 2020. Los resultado generales han demostrado que la natalidad se mantiene constante a lo largo de los años, siendo mayor en Andalucía, Madrid o Cataluña y menor en Cantabria, Asturias y La Rioja. 
+
+Hasta aquí cumplimos el primer objetivo ya que hemos representado gráficamente los valores de natalidad entre 2016 y 2020. Los resultado generales han demostrado que la natalidad se mantiene dentro de unos valores más o menos constantes a lo largo de los años aunque es importante recalcar que ha comenzado disminuir.
+Aunque los valores de natalidad sean cada año un poco menores, __Andalucía__, __Cataluña__ y __Madrid__ son las comunidades con los niveles más altos y __Ceuta__ y __Melilla__ aquellas en los que se producen menos nacimientos.
 
 
 _Tabla sobre el PIB._

@@ -171,6 +171,7 @@ ggplot(data = nuevaNatalidad, aes(x = `Comunidades autónomas`, y = nat_prom)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   geom_point()
 ```
+
 En esta gráfica podemos observar la media de la natalidad de las distintas comunidades y ciudades autónomas. Podemos ver que los resultados obtenidos en la media coinciden con los obtenidos en el resto de las tablas.Se sigue manteniendo que __Andalucía__, __Cataluña__, __Madrid__ y __Valencia__ son las que mayor natalidad tienen, mientras que las que menos son __Ceuta__ y __Melilla__. 
 
 _Tabla sobre el PIB._

@@ -203,5 +203,8 @@ El segundo objetivo, conocer el valor el PIB de cada comunidad autónoma, ya se 
 Hacemos un gráfico circular para poder comparar mejor los resultados obtenidos, donde a cada comunidad/ciudad autónoma le corresponde un color determinado. 
 
 
+### __Conclusiones.__
+Hemos estudiado la natalidad en las diferentes comunidades autónomas españolas y hemos podido comprobar que aunque generalmente, los valores se mantienen dentro de unos rangos, el número de nacimientos es cada vez menor.
 
+Conseguimos observar también la paradoja económico-demográfica que se refiere al hecho de que cuanto más acomodada y educada es una población o clase social, menos hijos tiene. Se produce una correlación inversa entre la riqueza y la fertilidad
 

@@ -1,6 +1,17 @@
 ---
-title: "Natalidad en función del PIB por comunidad autónoma."
+title: __Natalidad en función del PIB por comunidad autónoma.__
+
+
+  ![](INPUT/descarga.png)
+subtitle: |
+  Fuentes de datos Biomédicas y Web semánticas.
+   
+  Grado en Ingeniería de la Salud. 
+  
+  Universidad de Burgos.
+  
 author: "Lucía Vítores e Irene Gamazo"
+
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
@@ -9,16 +20,28 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# 1. Introducción 
+
 Este [repositorio](https://github.com/LuciaVitores/Prueba_seminario) ha sido creado para almacenar la información correspondiente a la natalidad por comunidades autónomas relacionada con los índices del producto interior burto (PIB) en España. 
 
 La información usada para realizar este trabajo ha sido obtenida en [Instituto Nacional de Estadística](https://www.ine.es/).
 
-### __Natalidad y PIB.__
-Al contrario de lo que se podría esperar, cuanta mayor riqueza tenga una zona, mayor PIB tendrá y, por tanto, menor será la tasa de natalidad comparada con otras zonas con un PIB más bajo.
+### __Natalidad.__
+En demografía, sociologíay geografía de la población, la tasa bruta de natalidad es una medida de cuantificación de la fecundidad. Se refiere a la relación que hay entre el número de nacimientos en un periodo determinado de tiempo y la cantidad total de población en un área geográfica determinada. Representa el número de individuos de una población que nacen vivos por unidad de tiempo. 
 
-Vamos a comprobarlo con las gráficas. 
+Suele estudiarse en periodos de un año y el resultado se da en por cada mil habitates en ese tiempo. 
 
-### __Objetivos.__
+La comparación de las tasa entre los diferenes paises o comunidades autónomas dentro de un mismo pais puede darnos información relevante. 
+
+### __PIB.__
+Es una magnitud que expresa el valor monetario de la producción de bienes y servicios de demanda final de un país durante un periodo de tiempo determinado, generalmente de un año. 
+
+### __Relación.__
+Nuestra hipótesis inicial es que, al contrario de lo que se podría esperar, cuanta mayor riqueza tenga una zona, mayor PIB tendrá y, por tanto, menor será la tasa de natalidad comparada con otras zonas con un PIB más bajo.
+
+Vamos a comprobar la veracidad de esta hipótesis a lo largo del seminario mediante el uso de tablas y gráficos. 
+
+# 2. Objetivos.
 Los principales objetivos de este repositorio son:
 
 + Estudiar graficamente los niveles de natalidad desde 2016 hasta 2020 en cada comunidad autónoma española. 

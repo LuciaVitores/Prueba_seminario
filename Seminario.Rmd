@@ -65,7 +65,7 @@ library(ggplot2)
 Los nombres de las filas de los datos que hemos descargado en INE, estaban compuesto por un número y el nombre de la comunidad autónoma. Para un mejor trabajo de los datos y unos resultados más claros y precisos, se han eliminado los números dejando únicamente el nombre. 
 Para ello hemos usado la función __mutate__, donde hemos relacionado los __levels__ (nombres que venían descritos) con los __labels__ (nombres que queríamos dar).
 
-## 3.1 _Tabla sobre el nacimiento en el año 2016._
+## 3.1. _Tabla sobre el nacimiento en el año 2016._
 ```{r}
 X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls") %>% 
 mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
@@ -87,7 +87,7 @@ Por otra parte, las comunidades que menos nacimientos registran son: __Ceuta__ c
 __La Rioja__, __Cantabria__, __Asturias__, __Navarra__, __Baleares__, __Extremadura__ y __Aragón__ se encuentran dentro de unos valores parecidos que no superan los 1000 nacimientos en ningún mes de 2016.
 Por último, __Canarias__, __Castilla y León__ , __Castilla la Mancha__, __Galicia__, __Murcia__ y __País Vasco__ también presentan valores similares entre los 1000 y los 2000 nacimientos cada mes.
 
-_Tabla sobre el nacimiento en el año 2017._
+## 3.2. _Tabla sobre el nacimiento en el año 2017._
 ```{r}
 X2017_2 <- read_excel("INPUT/Nacimiento - PIB/2017.2.xls")%>% 
 mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
@@ -108,7 +108,7 @@ En 2017 los resultados son similares a los que encontrábamos en 2016. __Andaluc
 __Ceuta__ y __Melilla__ siguen siendo las cominidades con menor natalidad. 
 Y el resto de comunidades se mantienen dentro de los mismos valores que podíamos observar en 2016.
 
-_Tabla sobre el nacimiento en el año 2018._
+## 3.3. _Tabla sobre el nacimiento en el año 2018._
 ```{r}
 X2018_2 <- read_excel("INPUT/Nacimiento - PIB/2018.2.xls")%>% 
 mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
@@ -128,7 +128,7 @@ ggplot(data = X2018_2, aes(x = `Comunidades autónomas` , y = Total)) +
 En 2018 vemos que los valores también son parecidos a los encontrados en los dos años anteriores, pero observamos que en las cuatro comunidades que presentan mayor natalidad las puntuaciones han bajado. Por ejemplo, encontramos en __Andalucía__ puntuaciones poco superiores a los 5000 nacimientos en algunos meses.
 Los valores de __Ceuta__ y __Melilla__ siguen siendo similares al igual que en el resto de comunidades.
 
-_Tabla sobre el nacimiento en el año 2019._
+## 3.4. _Tabla sobre el nacimiento en el año 2019._
 ```{r}
 X2019_2 <- read_excel("INPUT/Nacimiento - PIB/2019.2.xls")%>% 
 mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
@@ -147,7 +147,7 @@ ggplot(data = X2019_2, aes(x = `Comunidades autónomas` , y = Total)) +
 
 En 2019 podemos ver que, aunque sigan encontrándose dentro de los mismos rangos, sigue la tendencia a disminuir los valores de natalidad en todas las comunidades autónomas Españolas.
 
-_Tabla sobre el nacimiento en el año 2020._
+## 3.5. _Tabla sobre el nacimiento en el año 2020._
 ```{r}
 X2020_2 <- read_excel("INPUT/Nacimiento - PIB/2020.2.xls")%>% 
 mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,
@@ -197,7 +197,7 @@ ggplot(data = nuevaNatalidad, aes(x = `Comunidades autónomas`, y = nat_prom)) +
 
 En esta gráfica podemos observar la media de la natalidad de las distintas comunidades y ciudades autónomas. Podemos ver que los resultados obtenidos en la media coinciden con los obtenidos en el resto de las tablas.Se sigue manteniendo que __Andalucía__, __Cataluña__, __Madrid__ y __Valencia__ son las que mayor natalidad tienen, mientras que las que menos son __Ceuta__ y __Melilla__. 
 
-_Tabla sobre el PIB._
+## 3.6. _Tabla sobre el PIB._
 ```{r}
 PIB2 <- read_excel("INPUT/Nacimiento - PIB/PIB2.xls")
 names(PIB2)[names(PIB2) == 'Comunidades y ciudades autónomas'] <- 'Comunidades autónomas'
@@ -227,7 +227,7 @@ El segundo objetivo, conocer el valor el PIB de cada comunidad autónoma, ya se 
 Hacemos un gráfico circular para poder comparar mejor los resultados obtenidos, donde a cada comunidad/ciudad autónoma le corresponde un color determinado. 
 
 
-### __Conclusiones.__
+# 4. Conclusiones.
 Hemos estudiado la natalidad en las diferentes comunidades autónomas españolas y hemos podido comprobar que aunque generalmente, los valores se mantienen dentro de unos rangos, el número de nacimientos es cada vez menor.
 
 Conseguimos observar también la paradoja económico-demográfica que se refiere al hecho de que cuanto más acomodada y educada es una población o clase social, menos hijos tiene. Se produce una correlación inversa entre la riqueza y la fertilidad

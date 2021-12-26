@@ -49,7 +49,7 @@ Los principales objetivos de este repositorio son:
 + Comparar el crecimiento económico de las 19 comunidades autónomas españolas.
 + Relacionar estos niveles de natalidad en nuestro periodo de tiempo estudiado con los valores del PIB por comunidad autónoma.
 
-### __Inserción de tablas.__
+# 3. Inserción de tablas.
 Insertaremos las tablas con los datos obtenidos sobre la natalidad en las comunidades autónomas españolas entre los años 2016 y 2020, así como los valores del PIB correspondientes a estos años. 
 
 Primeros indicamos los paquetes de R que vamos a usar. 
@@ -65,7 +65,7 @@ library(ggplot2)
 Los nombres de las filas de los datos que hemos descargado en INE, estaban compuesto por un número y el nombre de la comunidad autónoma. Para un mejor trabajo de los datos y unos resultados más claros y precisos, se han eliminado los números dejando únicamente el nombre. 
 Para ello hemos usado la función __mutate__, donde hemos relacionado los __levels__ (nombres que venían descritos) con los __labels__ (nombres que queríamos dar).
 
-_Tabla sobre el nacimiento en el año 2016._
+## 3.1 _Tabla sobre el nacimiento en el año 2016._
 ```{r}
 X2016_2 <- read_excel("INPUT/Nacimiento - PIB/2016.2.xls") %>% 
 mutate(`Comunidades autónomas` = factor(`Comunidades autónomas`,

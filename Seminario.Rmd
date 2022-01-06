@@ -145,10 +145,12 @@ ggplot(data=X2016_2, aes(x=reorder(`Comunidades autónomas`, Total), y=Total, fi
 ```
 
 En 2016, podemos observar que la comunidad con mayores cifras de natalidad es __Andalucía__ con unos valores que superan los 7000 puntos, seguida de __Cataluña__ que sobrepasa los 6000 nacimientos dependiendo del mes y __Madrid__ con valores que rondan siempre los 5000 nacimientos.La cuarta comunidad con mayor puntuación es __Valencia__ que muestra valores entre los 3000 y 4000 nacimientos.
+
 Por otra parte, las comunidades que menos nacimientos registran son: __Ceuta__ con valores que generalmente no pasan de los 100 nacimientos y __Melilla__ que presenta entre 100 y 150 nacimientos cada mes.
 __La Rioja__, __Cantabria__, __Asturias__, __Navarra__, __Baleares__, __Extremadura__ y __Aragón__ se encuentran dentro de unos valores parecidos que no superan los 1000 nacimientos en ningún mes de 2016.
 Por último, __Canarias__, __Castilla y León__ , __Castilla la Mancha__, __Galicia__, __Murcia__ y __País Vasco__ también presentan valores similares entre los 1000 y los 2000 nacimientos cada mes.
-Podemos observar que no hay mucha separación entre las natalides de los meses en un mismo año. Las comunidades que más variaciones ha sufrido en este año han sido __Cataluña__ y __Andalucía__, ya que een el resto de ellas se ve que apenas hay variaciones entre los meses. 
+
+Podemos observar que no hay mucha separación entre las natalides de los meses en un mismo año. Las comunidades que más variaciones ha sufrido en este año han sido __Cataluña__ y __Andalucía__, ya que en el resto de ellas se ve que apenas hay variaciones entre los meses. 
 
 
 ```{r , message=FALSE} 
@@ -163,6 +165,7 @@ ggplot(data=X2017_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, f
 ```
 
 En 2017 los resultados son similares a los que encontrábamos en 2016. __Andalucía__, __Cataluña__, __Madrdid__ y __Valencia__ son las comunidades con más nacimientos, con la diferencia de que en Andalucía, este año hay meses en los que apenas se alcanzan los 6000 nacimientos.
+
 __Ceuta__ y __Melilla__ siguen siendo las cominidades con menor natalidad. 
 Y el resto de comunidades se mantienen dentro de los mismos valores que podíamos observar en 2016.
 
@@ -179,6 +182,7 @@ ggplot(data=X2018_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, f
 ```
 
 En 2018 vemos que los valores también son parecidos a los encontrados en los dos años anteriores, pero observamos que en las cuatro comunidades que presentan mayor natalidad las puntuaciones han bajado. Por ejemplo, encontramos en __Andalucía__ puntuaciones poco superiores a los 5000 nacimientos en algunos meses.
+
 Los valores de __Ceuta__ y __Melilla__ siguen siendo similares al igual que en el resto de comunidades.
 
 
@@ -213,12 +217,13 @@ ggplot(data=X2020_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, f
 Podemos comprobar que los resultados se mantienen constantes a lo largo de los años, pero cada vez es más observable el descenso de la natalidad.
 En este año es mucho más fácil de observar la diferencia entre las natalidades durante los meses. Las separaciones cada vez son más grandes, lo que indica que hay meses en los que la natalidad es relativamente baja.Donde mejor podemos observarlo es en __Madrid__. Aunque en comparación con el año 2016, todas las comunidades han sufrido una gran bajada. 
 
-Hasta aquí cumplimos el primer objetivo ya que hemos representado gráficamente los valores de natalidad entre 2016 y 2020. Los resultado generales han demostrado que la natalidad se mantiene dentro de unos valores más o menos constantes a lo largo de los años aunque es importante recalcar que ha comenzado disminuir.
+
+Hasta aquí cumplimos el primer objetivo, ya que hemos representado gráficamente los valores de natalidad entre 2016 y 2020. Los resultado generales han demostrado que la natalidad se mantiene dentro de unos valores más o menos constantes a lo largo de los años, aunque es importante recalcar que ha comenzado disminuir.
 
 Aunque los valores de natalidad sean cada año un poco menores, __Andalucía__, __Cataluña__ y __Madrid__ son las comunidades con los niveles más altos y __Ceuta__ y __Melilla__ aquellas en los que se producen menos nacimientos.
 
-Para tener una visión más global y ordenada de los datos de natalidad obtenemos la media de las natalidades de cada año: 
-El primer paso es unir todas las tablas de natalidad en una sola y a continuación obtenemos una tabla nueva con la media de cada comunidad autónoma usando la función __rbind__.
+Para tener una visión más global y ordenada de los datos de natalidad obtenemos la media de las natalidades de cada año.  
+El primer paso es unir todas las tablas de natalidad en una sola y, a continuación, obtenemos una tabla nueva con la media de cada comunidad autónoma usando la función __rbind__.
 
 ```{r}
 natalidad <- rbind(X2016_2, X2017_2, X2018_2, X2019_2, X2020_2)
@@ -250,9 +255,31 @@ ggplot(data=nuevaNatalidad, aes(x=reorder(`Comunidades autónomas`, natalidad_pr
 En esta gráfica podemos observar la media de la natalidad de las distintas comunidades y ciudades autónomas. Podemos ver que los resultados obtenidos en la media coinciden con los obtenidos en el resto de las tablas.Se sigue manteniendo que __Andalucía__, __Cataluña__, __Madrid__ y __Valencia__ son las que mayor natalidad tienen, mientras que las que menos son __Ceuta__ y __Melilla__. 
 
 
-## Objetivo 2: PIB.
+## Objetivo 2: PIB de cada comunidad. 
+```{r}
 
-## Objetivo 3 : Comparar PIB
+  
+```
+
+
+## Objetivo 3 : Comparar PIB.
+```{r}
+data("PIB2")
+  ggplot(data=PIB2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point() + 
+  labs(
+    title = "Gráfico PIB",
+    x = "Comunidades autónomas",
+    y = "Total"
+  ) +
+    coord_flip()
+```
+
+En este caso, con una sola tabla podemos comparar el PIB de todas las comunidades autónomas.
+
+Están ordenadas de tal forma que aquellas con un PIB más bajo estén abajo del todo y según se vaya ascendiendo, encontraremos comunidades autónomas con cada vez más PIB. 
+
+Las ciudades autónomas de __Ceuta__ y __Melilla__ son las más bajas de todas, mientras que __Madrid__, __Cataluña__ o __Andalucía__ son las que más tienen. Podemos ver que siguen el mismo orden que en las tablas de natalidad. 
 
 ## Objetivo 4 : Relaciónar PIB y natalidad.
 

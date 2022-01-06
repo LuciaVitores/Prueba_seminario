@@ -134,12 +134,16 @@ Hemos cambiado el nombre de la columna de _Comunidades y ciudades autónomas_ po
 
 ```{r , message=FALSE} 
 data("X2016_2")
-ggplot(data=X2016_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-    geom_bar(stat="identity", position="dodge")
+ggplot(data=X2016_2, aes(x=reorder(`Comunidades autónomas`, Total), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+    geom_bar(stat="identity", position="dodge") +
+  labs(
+    x = "Comunidades autónomas",
+    y = "Total"
+  )
   
 ```
 
-En 2016,podemos observar que la comunidad con mayores cifras de natalidad es __Andalucía__ con unos valores entre los 6000 y los 7000 puntos, seguida de __Cataluña__ que presenta entre 5000 y 6000 nacimientos dependiendo del mes y __Madrid__ con valores que rondan siempre los 5000 nacimientos.La cuarta comunidad con mayor puntuación es __Valencia__ que muestra valores entre los 3000 y 4000 nacimientos.
+En 2016, podemos observar que la comunidad con mayores cifras de natalidad es __Andalucía__ con unos valores que superan los 7000 puntos, seguida de __Cataluña__ que sobrepasa los 6000 nacimientos dependiendo del mes y __Madrid__ con valores que rondan siempre los 5000 nacimientos.La cuarta comunidad con mayor puntuación es __Valencia__ que muestra valores entre los 3000 y 4000 nacimientos.
 Por otra parte, las comunidades que menos nacimientos registran son: __Ceuta__ con valores que generalmente no pasan de los 100 nacimientos y __Melilla__ que presenta entre 100 y 150 nacimientos cada mes.
 __La Rioja__, __Cantabria__, __Asturias__, __Navarra__, __Baleares__, __Extremadura__ y __Aragón__ se encuentran dentro de unos valores parecidos que no superan los 1000 nacimientos en ningún mes de 2016.
 Por último, __Canarias__, __Castilla y León__ , __Castilla la Mancha__, __Galicia__, __Murcia__ y __País Vasco__ también presentan valores similares entre los 1000 y los 2000 nacimientos cada mes.
@@ -148,7 +152,11 @@ Por último, __Canarias__, __Castilla y León__ , __Castilla la Mancha__, __Gali
 ```{r , message=FALSE} 
 data("X2017_2")
 ggplot(data=X2017_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-    geom_bar(stat="identity", position="dodge")
+    geom_bar(stat="identity", position="dodge") +
+  labs(
+    x = "Comunidades autónomas",
+    y = "Total"
+  )
   
 ```
 
@@ -160,7 +168,11 @@ Y el resto de comunidades se mantienen dentro de los mismos valores que podíamo
 ```{r , message=FALSE} 
 data("X2018_2")
 ggplot(data=X2018_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-    geom_bar(stat="identity", position="dodge")
+    geom_bar(stat="identity", position="dodge") + 
+  labs(
+    x = "Comunidades autónomas",
+    y = "Total"
+  )
   
 ```
 
@@ -171,7 +183,11 @@ Los valores de __Ceuta__ y __Melilla__ siguen siendo similares al igual que en e
 ```{r , message=FALSE} 
 data("X2019_2")
 ggplot(data=X2019_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-    geom_bar(stat="identity", position="dodge")
+    geom_bar(stat="identity", position="dodge") + 
+  labs(
+    x = "Comunidades autónomas",
+    y = "Total"
+  )
   
 ```
 
@@ -181,7 +197,11 @@ En 2019 podemos ver que, aunque sigan encontrándose dentro de los mismos rangos
 ```{r , message=FALSE} 
 data("X2020_2")
 ggplot(data=X2020_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-    geom_bar(stat="identity", position="dodge")
+    geom_bar(stat="identity", position="dodge") +
+  labs(
+    x = "Comunidades autónomas",
+    y = "Total"
+  )
   
 ```
 
@@ -206,15 +226,20 @@ Una vez obtenida dicha tabla, creamos una nueva que agrupe por comunidades autó
 ```{r}
 nuevaNatalidad <- natalidad %>%
   group_by(`Comunidades autónomas`) %>%
-  summarise(nat_prom  = mean(Total))
+  summarise(natalidad_promedio  = mean(Total))
 nuevaNatalidad
 ```
 
 Observamos gráficamente los resultados:
 
 ```{r}
-ggplot(data=nuevaNatalidad, aes(x=reorder(`Comunidades autónomas`, nat_prom ), y=nat_prom, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-    geom_bar(stat="identity", position="dodge")
+ggplot(data=nuevaNatalidad, aes(x=reorder(`Comunidades autónomas`, natalidad_promedio ), y=natalidad_promedio, fill=`Comunidades autónomas`)) + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+    geom_bar(stat="identity", position="dodge") +
+  labs(
+    x = "Comunidades autónomas",
+    y = "Natalidad promedio"
+  )
 ```
 
 

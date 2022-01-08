@@ -45,7 +45,7 @@ Vamos a comprobar la veracidad de esta hipótesis a lo largo del seminario media
 Los principales objetivos de este repositorio son:
 
 + Estudiar graficamente los niveles de natalidad desde 2016 hasta 2020 en cada comunidad autónoma española. 
-+ Conocer el valor del PIB correspondiente a cada comunidad autónoma española.
++ Conocer el valor del PIB correspondiente a cada año en nuestras comunidades autónomas.
 + Comparar el crecimiento económico de las 19 comunidades autónomas españolas.
 + Relacionar estos niveles de natalidad en nuestro periodo de tiempo estudiado con los valores del PIB por comunidad autónoma.
 
@@ -137,7 +137,8 @@ data("X2016_2")
 ggplot(data=X2016_2, aes(x=reorder(`Comunidades autónomas`, Total), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
     geom_bar(stat="identity", position="dodge") +
   geom_point() +
-  labs(
+  labs( 
+    title = "Natalidad 2016", 
     x = "Comunidades autónomas",
     y = "Total"
   )
@@ -158,6 +159,7 @@ data("X2017_2")
 ggplot(data=X2017_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
     geom_bar(stat="identity", position="dodge") +
   labs(
+    title = "Natalidad 2017",
     x = "Comunidades autónomas",
     y = "Total"
   )
@@ -175,6 +177,7 @@ data("X2018_2")
 ggplot(data=X2018_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
     geom_bar(stat="identity", position="dodge") + 
   labs(
+    title = "Natalidad 2018",
     x = "Comunidades autónomas",
     y = "Total"
   )
@@ -191,6 +194,7 @@ data("X2019_2")
 ggplot(data=X2019_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, fill=`Comunidades autónomas`)) + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
     geom_bar(stat="identity", position="dodge") + 
   labs(
+    title = "Natalidad 2019",
     x = "Comunidades autónomas",
     y = "Total"
   )
@@ -206,6 +210,7 @@ ggplot(data=X2020_2, aes(x=reorder(`Comunidades autónomas`, Total ), y=Total, f
     geom_bar(stat="identity", position="dodge") +
   geom_point() + 
   labs(
+    title = "Natalidad 2020",
     x = "Comunidades autónomas",
     y = "Total"
   )
@@ -246,6 +251,7 @@ ggplot(data=nuevaNatalidad, aes(x=reorder(`Comunidades autónomas`, natalidad_pr
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
     geom_bar(stat="identity", position="dodge") +
   labs(
+    title = "Natalidad media",
     x = "Comunidades autónomas",
     y = "Natalidad promedio"
   )
@@ -255,10 +261,74 @@ ggplot(data=nuevaNatalidad, aes(x=reorder(`Comunidades autónomas`, natalidad_pr
 En esta gráfica podemos observar la media de la natalidad de las distintas comunidades y ciudades autónomas. Podemos ver que los resultados obtenidos en la media coinciden con los obtenidos en el resto de las tablas.Se sigue manteniendo que __Andalucía__, __Cataluña__, __Madrid__ y __Valencia__ son las que mayor natalidad tienen, mientras que las que menos son __Ceuta__ y __Melilla__. 
 
 
-## Objetivo 2: PIB de cada comunidad. 
+## Objetivo 2: PIB por año.
+
+En este objetivo hemos decidido mostrar los datos en función de los años en vez de las comunidades autónomas porque el número de tablas que creamos es menor y nos muestran la misma información.
+Para ello, a apartir del dataframe en el que teníamos los datos del PIB, creamos un nuevo dataframe por cada año. Y posteriormente mostramos los datos gráficamente.
+ 
 ```{r}
+PIB_2015 <- PIB2%>%
+  filter( periodo == "2015") %>%
+  select( `Comunidades autónomas`, Total )
+
+ggplot(PIB_2015, aes(x=`Comunidades autónomas`, y=Total )) + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_line(size=1, colour = "blue") + 
+  geom_point( size=2, shape=21, fill="blue", colour="red") + 
+   labs(
+    title = "PIB año 2015")
+  theme_minimal()
+
 
   
+```
+ 
+ 
+ 
+```{r}
+PIB_2016 <- PIB2%>%
+  filter( periodo == "2016") %>%
+  select( `Comunidades autónomas`, Total )
+
+ggplot(PIB_2016, aes(x=`Comunidades autónomas`, y=Total )) + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_line(size = 1, colour = "blue" )  + 
+  geom_point( size=2, shape=21, fill="blue", colour="red") + 
+   labs(
+    title = "PIB año 2016")
+  theme_minimal()
+  
+
+```
+
+```{r}
+PIB_2017 <- PIB2%>%
+  filter( periodo == "2017") %>%
+  select( `Comunidades autónomas`, Total )
+  
+ggplot(PIB_2017, aes(x=`Comunidades autónomas`, y=Total )) + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_line(size = 1, colour = "blue" ) + 
+  geom_point( size=2, shape=21, fill="blue", colour="red") + 
+   labs(
+    title = "PIB año 2017")
+  theme_minimal()
+```
+ 
+```{r}
+PIB_2018 <- PIB2%>%
+  filter( periodo == "2018") %>%
+  select( `Comunidades autónomas`, Total )
+  
+PIB_2018
+```
+
+```{r}
+PIB_2019 <- PIB2%>%
+  filter( periodo == "2019") %>%
+  select( `Comunidades autónomas`, Total )
+  
+PIB_2019
 ```
 
 

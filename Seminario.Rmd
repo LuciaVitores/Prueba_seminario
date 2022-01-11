@@ -241,7 +241,6 @@ El primer paso es unir todas las tablas de natalidad en una sola y, a continuaci
 
 ```{r}
 natalidad <- rbind(X2016_2, X2017_2, X2018_2, X2019_2, X2020_2)
-natalidad
 DT::datatable(natalidad)
 ```
 

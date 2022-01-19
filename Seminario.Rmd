@@ -13,7 +13,12 @@ subtitle: |
 author: "Lucía Vítores e Irene Gamazo"
 
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
+output: 
+  html_document:
+    df_print: paged
+    theme: journal
+    toc: yes
+    toc_float: yes 
 ---
 
 ```{r setup, include=FALSE}
@@ -27,7 +32,7 @@ Este [repositorio](https://github.com/LuciaVitores/Prueba_seminario) ha sido cre
 La información usada para realizar este trabajo ha sido obtenida en [Instituto Nacional de Estadística](https://www.ine.es/).
 
 ### __Natalidad.__
-En demografía, sociologíay geografía de la población, la tasa bruta de natalidad es una medida de cuantificación de la fecundidad. Se refiere a la relación que hay entre el número de nacimientos en un periodo determinado de tiempo y la cantidad total de población en un área geográfica determinada. Representa el número de individuos de una población que nacen vivos por unidad de tiempo. 
+En demografía, sociología y geografía de la población, la tasa bruta de natalidad es una medida de cuantificación de la fecundidad. Se refiere a la relación que hay entre el número de nacimientos en un periodo determinado de tiempo y la cantidad total de población en un área geográfica determinada. Representa el número de individuos de una población que nacen vivos por unidad de tiempo. 
 
 Suele estudiarse en periodos de un año y el resultado se da en por cada mil habitates en ese tiempo. 
 
@@ -58,6 +63,7 @@ Primeros indicamos los paquetes de R que vamos a usar.
 #install.packages('DT')
 library(readxl)
 library(DT)
+library(dplyr)
 library(tidyverse)
 library(ggplot2)
 ```
@@ -245,7 +251,7 @@ DT::datatable(natalidad)
 ```
 
 
-Una vez obtenida dicha tabla, creamos una nueva que agrupe por comunidades autónomas y cree una nueva columna dentro de esta llamada _nat_prom_ que tenga la media del total de cada comunidad. 
+Una vez obtenida dicha tabla, creamos una nueva que agrupe por comunidades autónomas y cree una nueva columna dentro de esta llamada _natalidad_promedio_ que tenga la media del total de cada comunidad. 
 
 
 ```{r}
@@ -388,27 +394,45 @@ data("PIB2")
     x = "Comunidades autónomas",
     y = "Total"
   ) +
-    coord_flip()
+    coord_flip() 
 ```
 
 
 
 En este caso, con una sola tabla podemos comparar el PIB de todas las comunidades autónomas.
 
-Están ordenadas de tal forma que aquellas con un PIB más bajo estén abajo del todo y según se vaya ascendiendo, encontraremos comunidades autónomas con cada vez más PIB. 
+Están ordenadas de tal forma que aquellas con un PIB más bajo estén abajo del todo y según se vaya ascendiendo, encontraremos comunidades autónomas con cada vez más PIB hasta llegar al total. 
 
 Las ciudades autónomas de __Ceuta__ y __Melilla__ son las más bajas de todas, mientras que __Madrid__, __Cataluña__ o __Andalucía__ son las que más tienen. Podemos ver que siguen el mismo orden que en las tablas de natalidad. 
 
 ## Objetivo 4 : Relaciónar PIB y natalidad.
-
+Una vez que ya hemos estudiado por separado los valores de natalidad y PIB, vamos a ponerlos en común para ver como evolucionan y si se cumple con la hipótesis planteada al principio.
+Para ello relacionamos las dos tablas con las que queremos trabajar, PIB2 y nuevaNatalidad (tabla creada anteriormente que almacena la información relacionada con la media total del nacimiento en cada comunidad).
 
 ```{r}
-left_join(x = nuevaNatalidad, y = PIB2)
+relacion <- left_join(x = nuevaNatalidad, y = PIB2)
+relacion
+
 ```  
+```{r}
+ggplot(data=relacion, aes(x= natalidad_promedio, y=Total )) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  geom_point(colour = "green") +
+  geom_smooth(colour = " darkgreen") +
+  labs(
+    title = "Relación Natalidad - PIB",
+    x = "Natalidad promedio",
+    y = "Total PIB"
+  ) 
+  
+```  
+Para poder estudiar la gráfica final, debemos saber que hay otros factores que alteran los resultados, como por ejemplo la superficie de cada comunidad autónoma.
 
+Al principio de la gráfica podemos ver que cuanto más bajo es el PIB, menos natalidad se da. Y cuando aumenta el PIB, aumentan los nacimientos. De esta forma podríamos decir que es una relación lineal, ya que al aumentar uno hace que aumente el otro. 
 
+Sin embargo, si nos fijamos en el final de la tabla donde se representan los valores más altos de PIB, podemos ver que la natalidad disminuye en vez de aumentar. La línea comienza a crecer de forma recta pero a medida que va aumentando el PIB, vemos como va disminuyendo creando un pico máximo antes de los 5000 nacimientos. Lo que nos hace corroborar nuestra hipótesis inicial (cuanto más PIB, menos nacimientos).
 # 5. Conclusiones.
-Hemos estudiado la natalidad en las diferentes comunidades autónomas españolas y hemos podido comprobar que aunque generalmente, los valores se mantienen dentro de unos rangos, el número de nacimientos es cada vez menor.
+Hemos estudiado la natalidad en las diferentes comunidades autónomas españolas y hemos podido comprobar que aunque generalmente, los valores se mantienen constantes dentro de unos rangos, el número de nacimientos es cada vez menor.
 
 Conseguimos observar también la paradoja económico-demográfica que se refiere al hecho de que cuanto más acomodada y educada es una población o clase social, menos hijos tiene. Se produce una correlación inversa entre la riqueza y la fertilidad
 

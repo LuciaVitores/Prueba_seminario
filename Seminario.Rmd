@@ -295,7 +295,6 @@ PIB_2015 <- PIB2%>%
 
 ggplot(PIB_2015, aes(x=`Comunidades autónomas`, y=Total )) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_line(size=1, colour = "lightblue") + 
   geom_point(size=2, shape=21,fill="violetred", colour="violetred") + 
    labs(
      title = "PIB año 2015",
@@ -315,7 +314,6 @@ PIB_2016 <- PIB2%>%
 
 ggplot(PIB_2016, aes(x=`Comunidades autónomas`, y=Total )) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_line(size = 1, colour = "lightblue" )  + 
   geom_point( size=2, shape=21, fill="violetred", colour="violetred") + 
    labs(
     title = "PIB año 2016",
@@ -335,7 +333,6 @@ PIB_2017 <- PIB2%>%
   
 ggplot(PIB_2017, aes(x=`Comunidades autónomas`, y=Total )) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_line(size = 1, colour = "lightblue" ) + 
   geom_point( size=2, shape=21, fill="violetred", colour="violetred") + 
    labs(
     title = "PIB año 2017",
@@ -353,7 +350,6 @@ PIB_2018 <- PIB2%>%
 
 ggplot(PIB_2018, aes(x=`Comunidades autónomas`, y=Total )) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_line(size=1, colour = "lightblue") + 
   geom_point(size=2, shape=21,fill="violetred", colour="violetred") + 
    labs(
      title = "PIB año 2018",
@@ -372,7 +368,6 @@ PIB_2019 <- PIB2%>%
   select( `Comunidades autónomas`, Total )
 ggplot(PIB_2019, aes(x=`Comunidades autónomas`, y=Total )) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_line(size=1, colour = "lightblue") + 
   geom_point(size=2, shape=21,fill="violetred", colour="violetred") + 
    labs(
      title = "PIB año 2019",
@@ -382,7 +377,7 @@ ggplot(PIB_2019, aes(x=`Comunidades autónomas`, y=Total )) +
 
 ```
 
-Podemos ver que en todos los casos los resultados son más o menos constantes. 
+Podemos ver que en todos los años los resultados son más o menos constantes. 
 
 
 ## Objetivo 3 : Comparar PIB.
@@ -427,6 +422,7 @@ ggplot(data=relacion, aes(x= natalidad_promedio, y=Total )) +
   ) 
   
 ```  
+
 Para poder estudiar la gráfica final, debemos saber que hay otros factores que alteran los resultados, como por ejemplo la superficie de cada comunidad autónoma.
 
 Al principio de la gráfica podemos ver que cuanto más bajo es el PIB, menos natalidad se da. Y cuando aumenta el PIB, aumentan los nacimientos. De esta forma podríamos decir que es una relación lineal, ya que al aumentar uno hace que aumente el otro. 

@@ -382,6 +382,7 @@ ggplot(PIB_2019, aes(x=`Comunidades autónomas`, y=Total )) +
 
 ```
 
+Podemos ver que en todos los casos los resultados son más o menos constantes. 
 
 
 ## Objetivo 3 : Comparar PIB.
@@ -407,7 +408,7 @@ Las ciudades autónomas de __Ceuta__ y __Melilla__ son las más bajas de todas, 
 
 ## Objetivo 4 : Relaciónar PIB y natalidad.
 Una vez que ya hemos estudiado por separado los valores de natalidad y PIB, vamos a ponerlos en común para ver como evolucionan y si se cumple con la hipótesis planteada al principio.
-Para ello relacionamos las dos tablas con las que queremos trabajar, PIB2 y nuevaNatalidad (tabla creada anteriormente que almacena la información relacionada con la media total del nacimiento en cada comunidad).
+Para ello relacionamos las dos tablas con las que queremos trabajar, PIB2 y nuevaNatalidad (tabla creada anteriormente que almacena la información relacionada con la media total del nacimiento en cada comunidad) en un únidco dataframe __relacion__.
 
 ```{r}
 relacion <- left_join(x = nuevaNatalidad, y = PIB2)
@@ -431,6 +432,8 @@ Para poder estudiar la gráfica final, debemos saber que hay otros factores que 
 Al principio de la gráfica podemos ver que cuanto más bajo es el PIB, menos natalidad se da. Y cuando aumenta el PIB, aumentan los nacimientos. De esta forma podríamos decir que es una relación lineal, ya que al aumentar uno hace que aumente el otro. 
 
 Sin embargo, si nos fijamos en el final de la tabla donde se representan los valores más altos de PIB, podemos ver que la natalidad disminuye en vez de aumentar. La línea comienza a crecer de forma recta pero a medida que va aumentando el PIB, vemos como va disminuyendo creando un pico máximo antes de los 5000 nacimientos. Lo que nos hace corroborar nuestra hipótesis inicial (cuanto más PIB, menos nacimientos).
+
+
 # 5. Conclusiones.
 Hemos estudiado la natalidad en las diferentes comunidades autónomas españolas y hemos podido comprobar que aunque generalmente, los valores se mantienen constantes dentro de unos rangos, el número de nacimientos es cada vez menor.
 
